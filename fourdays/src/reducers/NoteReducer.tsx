@@ -14,6 +14,13 @@ export const NoteReducer = ( state: Note[] = [], action: NoteAction ) => {
             const arr = [...state]
             arr.splice(index, 1)
             return arr
+        case NoteType.NOTE_UPDATE:
+            const updateIndex = state.findIndex( item => item.id === action.payload.id )
+            const arrUpdate = [...state]
+            if ( updateIndex > -1 ) {
+                arrUpdate[updateIndex] = action.payload
+            }
+            return arrUpdate
         default:
             return state
     }
