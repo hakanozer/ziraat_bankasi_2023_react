@@ -12,6 +12,8 @@
     "@types/react": "^18.2.12",
     "@types/react-dom": "^18.2.5",
     "axios": "^1.4.0",
+    "crypto-js": "^4.1.1",
+    "jquery": "^3.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
@@ -47,6 +49,8 @@
     ]
   },
   "devDependencies": {
+    "@types/crypto-js": "^4.1.1",
+    "@types/jquery": "^3.5.16",
     "@types/react-helmet": "^6.1.6"
   }
 }

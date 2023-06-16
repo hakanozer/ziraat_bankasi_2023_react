@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useReducer } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { StateType } from './Store'
 import { NoteAction } from './actions/NoteAction'
@@ -6,6 +6,7 @@ import { NoteType } from './types/NoteType'
 import { Note } from './models/Note'
 import { DataContext } from './context/DataContext'
 import { Helmet } from 'react-helmet'
+import { dataReducer, numx } from './utils/dataReducer'
 
 function Profile() {
 
@@ -32,12 +33,15 @@ function Profile() {
     dispatch(updateItm)
   }
 
+  const [state, dispatchData] = useReducer(dataReducer, numx)
+
   return (
     <>
     <Helmet>
       <title>Profile Page</title>
       <meta name="description" content="Profile application" />
     </Helmet>
+    <h3>{state}</h3>
     <table className="table">
     { JSON.stringify(getItem)  }
     <thead>
